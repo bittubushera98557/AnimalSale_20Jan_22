@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.lenovo.emptypro">
-    <!-- 20-01-2020: 00:11 -->
+    <!-- 22-01-2020: 19:00 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.location.GPS_ENABLED_CHANGE" />
@@ -18,7 +18,8 @@
         android:roundIcon="@drawable/app_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".Fragments.SellModule.AdsDoneActivity"></activity>
+        <activity android:name=".Activities.WebBaseContentActivity"></activity>
+        <activity android:name=".Fragments.SellModule.AdsDoneActivity" />
         <activity
             android:name=".Activities.P2PChatView"
             android:screenOrientation="portrait"

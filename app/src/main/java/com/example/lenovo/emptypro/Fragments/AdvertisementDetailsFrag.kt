@@ -2,6 +2,7 @@ package com.example.lenovo.emptypro.Fragments
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -10,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.example.lenovo.emptypro.Activities.P2PChatView
 import com.example.lenovo.emptypro.ApiCallClasses.RetrofitClasses.GetDataService
 import com.example.lenovo.emptypro.ApiCallClasses.RetrofitClasses.RetrofitClientInstance
 
@@ -42,7 +44,17 @@ class AdvertisementDetailsFrag : Fragment(), View.OnClickListener, OnMapReadyCal
     }
 
     override fun onClick(v: View?) {
-
+when(v!!.id)
+{
+    R.id.tv_bottomChat->
+    {
+        val intentChat= Intent(ctx, P2PChatView::class.java)
+        val mBundle = Bundle()
+        mBundle.putString("otp", petId)
+        intentChat.putExtras(mBundle)
+         startActivity(intentChat)
+    }
+}
     }
 
     // TODO: Rename and change types of parameters
@@ -68,6 +80,7 @@ class AdvertisementDetailsFrag : Fragment(), View.OnClickListener, OnMapReadyCal
         super.onViewCreated(view, savedInstanceState)
         tv_call.setOnClickListener(this)
         fl_AdvertisementDetailsFrag.setOnClickListener(this)
+        tv_bottomChat.setOnClickListener(this)
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
         service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService::class.java)

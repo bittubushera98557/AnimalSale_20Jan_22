@@ -215,10 +215,25 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
            // finish();
         } else if (id == R.id.nav_termCondition) {
+            Intent intent = new Intent(getApplication(), WebBaseContentActivity.class);
 
-        } else if (id == R.id.nav_privacy) {
-
-        } else if (id == R.id.nav_uploaded_petes) {
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            intent.putExtra("for","terms");
+            startActivity(intent);
+        }
+        else if (id == R.id.nav_privacy) {
+            Intent intent = new Intent(getApplication(), WebBaseContentActivity.class);
+             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            intent.putExtra("for","privacy");
+            startActivity(intent);
+        }
+        else if (id == R.id.nav_aboutUs) {
+            Intent intent = new Intent(getApplication(), WebBaseContentActivity.class);
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            intent.putExtra("for","about");
+            startActivity(intent);
+        }
+        else if (id == R.id.nav_uploaded_petes) {
             Intent intent = new Intent(getApplication(), UploadedPets.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
